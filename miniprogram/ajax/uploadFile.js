@@ -13,7 +13,7 @@ const imageUpload = async (imageList)=>{
         let suffix = /\.\w+$/.exec(element)[0]
         // 进行同步存储
         await wx.cloud.uploadFile({
-            cloudPath: `blog/${Date.now()}-${Math.floor(Math.random()*100000)}${suffix}`,
+            cloudPath: `deed/${Date.now()}-${Math.floor(Math.random()*100000)}${suffix}`,
             filePath : element,                                                             // 文件路径
         }).then(res => {
             fileListId.push(res.fileID)
